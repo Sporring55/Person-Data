@@ -22,7 +22,7 @@
        <?php
         /* This code gets the data from mysql and writes a Json file 
         wich is used to show the data with javascript*/
-        require_once("mysql\mysqli_connect.php");
+        require_once("../mysql\mysqli_connect.php");
 
 
         $response = array();
@@ -31,7 +31,8 @@
         $sql = "SELECT * FROM personData";  
         //Connecting to mysql and running a while statement to get all the data
 
-        $delete = "UPDATE personData SET navn = null, adresse = null, email = null, num = null WHERE dato < (NOW() - INTERVAL 1 MINUTE)";
+        $delete = "UPDATE personData SET navn = null, adresse = null, email = null, num = null WHERE dato < (NOW() - INTERVAL 1 HOUR)";
+       
         $res = mysqli_query($dbc,$delete);
         if($res == false){
             echo "Error \n".mysqli_error($dbc);
@@ -48,7 +49,7 @@
                 $posts["By"] = $row["sted"];
                 $posts["Post NR"] = $row["post"];
                 $posts["Dato"] = $row["dato"];
-                $posts["Anbefaling"] = $row["anbefal"];
+                $posts["Anbefaling"] = $row["andbefal"];
                 $posts["Oversag"] = $row["oversag"];
                 $posts["Bemærkning1"] = $row["bemærk1"];
                 $posts["Bemærkning2"] = $row["bemærk2"];
@@ -70,7 +71,6 @@
         $fp = fopen($myFile, 'w');
         fwrite($fp, json_encode($response));
         fclose($fp);
-        
 
 
     mysqli_close($dbc);
@@ -81,5 +81,6 @@
         <button id="btn">show</button>
         <button id="btn1">hide</button>
     </div>
+   
 </body>
 </html>

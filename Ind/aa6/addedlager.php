@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1 id="head">Tilføj Person-Data</h1>
+<h1 id="head">Tilføj Person-Data </br > 6 År</h1>
 <?php
 if(isset($_POST["submit"])){
     $data_miss = array();   
@@ -35,11 +35,11 @@ if(isset($_POST["submit"])){
     else {
         $num = trim($_POST["num"]);
     }
-    if(empty($_POST["anbefal"])){
+    if(empty($_POST["andbefal"])){
         $data_miss[] = "Anbefaling";
     }
     else {
-        $anbefal = trim($_POST["anbefal"]);
+        $anbefal = trim($_POST["andbefal"]);
     }
     if(empty($_POST["oversag"])){
         $data_miss[] = "Oversag";
@@ -75,7 +75,7 @@ if(isset($_POST["submit"])){
     
     if(empty($data_miss)){
         require_once("../mysql/mysqli_connect.php");
-        if($stmt = mysqli_prepare($dbc, "INSERT INTO personData (navn, adresse,  email, num, sted, post, anbefal, oversag, bemærk1, bemærk2) VALUES (?,?,?,?,?,?,?,?,?,?)")){
+        if($stmt = mysqli_prepare($dbc, "INSERT INTO seksÅr (navn, adresse,  email, num, sted, post, andbefal, oversag, bemærk1, bemærk2) VALUES (?,?,?,?,?,?,?,?,?,?)")){
             mysqli_stmt_bind_param($stmt, "ssssssssss", $navn, $adresse, $email, $num, $sted,$post, $anbefal, $oversag, $bemærk1, $bemærk2);
             mysqli_stmt_execute($stmt);
         }
@@ -106,8 +106,7 @@ if(isset($_POST["submit"])){
 }
 
 ?>
-<form action="http://localhost:8888/Git-hub/Person-data/ind/
-addedlager.php" method="post">
+<form action="http://localhost:8888/Git-hub/Person-data/Ind/aa6/addedlager.php" method="post">
 <h2 id="over"><b>Skriv ind her</b></h2>
 <p id="over"><b>navn:</b><br />
 <input type="text"  name="navn" size="30" value=""/>
@@ -130,7 +129,7 @@ addedlager.php" method="post">
 <input type="text" name="post" size="30" value=""/>
 </p>
 <p id="over"><b>Anbefaling:</b><br />
-<input type="text" name="anbefal" size="30" value=""/>
+<input type="text" name="andbefal" size="30" value=""/>
 </p>
 <p id="over"><b>oversag:</b><br />
 <input type="text" name="oversag" size="30" value=""/>
