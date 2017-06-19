@@ -1,0 +1,36 @@
+#head {
+    text-align: center;
+    border-bottom: 3px solid black;
+}
+
+.search{
+    text-align: center;
+
+    
+}
+.data {
+    width: 10%;
+    height: 32%;
+    text-align: center;
+    border: 3px solid black;
+}
+.tHead{
+    border-bottom: 2px solid black;
+}
+.container1, .container2, .container3{
+    margin-top: 40px;
+}
+.sidebar{
+    text-align: center;
+} 
+#btn{
+    margin-top: 20px;
+    border: none;
+    padding: 15px 25px;
+}
+#btn:hover{
+    background-color: lightgrey;
+}
+dAa6 dAa1 dM6 {
+    border: none;
+}
