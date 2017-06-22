@@ -5,8 +5,10 @@
 
 .search{
     text-align: center;
-
-    
+}
+#search {
+    border-radius: 5px;
+    border: 1.5px solid black;
 }
 .data {
     width: 10%;
@@ -17,9 +19,41 @@
 .tHead{
     border-bottom: 2px solid black;
 }
+#idFrom{
+    font-size: 15px;
+}
 .container1, .container2, .container3{
     margin-top: 40px;
 }
+#m6:nth-child(even){
+    background-color: #0066ff;
+    color: white;
+}
+
+#m6:nth-child(odd){
+    background-color: rgba(0, 102, 255,0.75);
+    color: white;
+}
+
+#aa1:nth-child(even){
+    background-color: rgb(0, 153, 0);
+    color: white;
+}
+
+#aa1:nth-child(odd){
+    background-color: rgba(0, 153, 0, 0.75);
+    color: white;
+}
+#aa6:nth-child(even){
+    background-color: rgb(128, 0, 0);
+    color: white;
+}
+
+#aa6:nth-child(odd){
+    background-color: rgba(128, 0, 0, 0.75);
+    color: white;
+}
+
 .sidebar{
     text-align: center;
 } 
@@ -27,10 +61,19 @@
     margin-top: 20px;
     border: none;
     padding: 15px 25px;
+
 }
 #btn:hover{
     background-color: lightgrey;
 }
-dAa6 dAa1 dM6 {
+#dM6, #dAa1, #dAa6 {
+    /*margin-top: 10px;*/
+    margin-right: -5px;
     border: none;
+    padding: 11px 16px;
+    color: black;
+}
+#dM6:hover, #dAa1:hover, #dAa6:hover {
+    padding: 13px 18px;
+    background-color: lightgrey;
 }

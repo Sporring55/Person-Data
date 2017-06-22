@@ -190,7 +190,7 @@ function rowDelete($dbc)
         $delete = "DELETE FROM $from WHERE p_id = $num";
         $dQuery = mysqli_query($dbc, $delete);
         if($dQuery == true){
-        
+            
         }else {
             echo "Error \n".mysqli_error($dbc);
         }
@@ -215,11 +215,20 @@ function rowDelete($dbc)
    <form  action="http://localhost:8888/Git-hub/Person-data/admin/adminsite.php" method="post">
         <h2>Overfør Data</h2>
         <h3 id="from">Fra</h3>
-        <input name="from"></input>
-        <h3 id="to">Til</h3>
-        <input name="to"></input>
-        <h3 id="num">ID</h3>
+        <select name="from">
+        <option value="personData">6-Måneder</option>
+        <option value="etår">1-År</option>
+        <option value="seksår">6-År</option>
+        </select>
+        <h4 id="num"><b>ID </b><span id="idFrom">(Id på kolonne)</span></h4>
         <input size="4" name="num" ></input>
+        <h3 id="to">Til</h3>
+        <select name="to">
+        <option value="personData">6-Måneder</option>
+        <option value="etår">1-År</option>
+        <option value="seksår">6-År</option>
+        </select>
+        
         <p><input type="submit" name="btn" id="btn"></input></p>
     </form>
     </div>
@@ -227,10 +236,8 @@ function rowDelete($dbc)
 
         <h1 id="searchH">Søg</h1>
         <input id="search" placeholder="Søg"></input>
-
         <h2 class="tHead">6-måneder</h2>
         <form class="id-nr" method="post" action="http://localhost:8888/Git-hub/Person-data/admin/adminsite.php">
-
         <div class="container1">
         </div>
         </form>
